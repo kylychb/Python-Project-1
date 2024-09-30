@@ -1,11 +1,9 @@
 from django.contrib import admin
-
 from .models import Category, Item, ItemImages
-
-
+from modeltranslation.admin import TabbedTranslationAdmin
 # Register your models here.
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(TabbedTranslationAdmin):
     pass
 
 class ItemImagesInline(admin.StackedInline):
